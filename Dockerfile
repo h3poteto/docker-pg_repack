@@ -9,8 +9,8 @@ RUN set -ex && \
     postgresql-dev \
     build-base \
     zlib-dev && \
-    wget http://api.pgxn.org/dist/pg_repack/1.4.5/pg_repack-1.4.5.zip && \
-    unzip pg_repack-1.4.5.zip && \
-    cd pg_repack-1.4.5 && \
+    wget http://api.pgxn.org/dist/pg_repack/1.4.4/pg_repack-1.4.4.zip && \
+    unzip pg_repack-1.4.4.zip && \
+    cd pg_repack-1.4.4 && \
     make && \
     make install

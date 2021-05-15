@@ -14,8 +14,8 @@ RUN set -ex && \
     rm -rf /var/cache/apt/archives/* /var/lib/apt/lists/*
 
 RUN set -ex && \
-    wget http://api.pgxn.org/dist/pg_repack/1.4.4/pg_repack-1.4.4.zip && \
-    unzip pg_repack-1.4.4.zip && \
-    cd pg_repack-1.4.4 && \
+    wget http://api.pgxn.org/dist/pg_repack/1.4.6/pg_repack-1.4.6.zip && \
+    unzip pg_repack-1.4.6.zip && \
+    cd pg_repack-1.4.6 && \
     make && \
     make install

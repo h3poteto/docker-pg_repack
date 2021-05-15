@@ -1,17 +1,14 @@
-FROM debian:buster-slim
+FROM alpine:3.12
 
 RUN set -ex && \
-    apt-get update && \
-    apt-get install -y --no-install-recommends \
-    ca-certificates \
+    apk add --no-cache \
+    bash \
     unzip \
-    build-essential \
-    wget \
-    libpq-dev \
-    postgresql-server-dev-11 \
-    libssl-dev \
-    zlib1g-dev && \
-    rm -rf /var/cache/apt/archives/* /var/lib/apt/lists/*
+    make \
+    postgresql-client \
+    postgresql-dev \
+    build-base \
+    zlib-dev
 
 RUN set -ex && \
     wget http://api.pgxn.org/dist/pg_repack/1.4.6/pg_repack-1.4.6.zip && \

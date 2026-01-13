@@ -1,4 +1,4 @@
-FROM alpine:3.12
+FROM alpine:3.23
 
 RUN set -ex && \
     apk add --no-cache \
@@ -11,8 +11,8 @@ RUN set -ex && \
     zlib-dev
 
 RUN set -ex && \
-    wget http://api.pgxn.org/dist/pg_repack/1.4.6/pg_repack-1.4.6.zip && \
-    unzip pg_repack-1.4.6.zip && \
-    cd pg_repack-1.4.6 && \
+    wget http://api.pgxn.org/dist/pg_repack/1.5.2/pg_repack-1.5.2.zip && \
+    unzip pg_repack-1.5.2.zip && \
+    cd pg_repack-1.5.2 && \
     make && \
     make install

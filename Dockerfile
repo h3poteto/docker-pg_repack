@@ -1,18 +1,25 @@
-FROM alpine:3.12
+FROM debian:12-slim
 
 RUN set -ex && \
-    apk add --no-cache \
+    apt-get update && \
+    apt-get install -y --no-install-recommends \
     bash \
     unzip \
     make \
     postgresql-client \
-    postgresql-dev \
-    build-base \
-    zlib-dev
+    postgresql-server-dev-all \
+    build-essential \
+    zlib1g-dev \
+    libzstd-dev \
+    liblz4-dev \
+    libreadline-dev \
+    wget \
+    ca-certificates && \
+    rm -rf /var/lib/apt/lists/*
 
 RUN set -ex && \
-    wget http://api.pgxn.org/dist/pg_repack/1.4.6/pg_repack-1.4.6.zip && \
-    unzip pg_repack-1.4.6.zip && \
-    cd pg_repack-1.4.6 && \
+    wget http://api.pgxn.org/dist/pg_repack/1.5.2/pg_repack-1.5.2.zip && \
+    unzip pg_repack-1.5.2.zip && \
+    cd pg_repack-1.5.2 && \
     make && \
     make install

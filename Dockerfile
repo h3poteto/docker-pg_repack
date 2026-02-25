@@ -22,4 +22,5 @@ RUN set -ex && \
     unzip pg_repack-1.5.2.zip && \
     cd pg_repack-1.5.2 && \
     make && \
-    make install
+    make install && \
+    ln -s /usr/lib/postgresql/*/bin/pg_repack /usr/local/bin/pg_repack

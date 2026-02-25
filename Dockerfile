@@ -18,9 +18,9 @@ RUN set -ex && \
     rm -rf /var/lib/apt/lists/*
 
 RUN set -ex && \
-    wget http://api.pgxn.org/dist/pg_repack/1.5.2/pg_repack-1.5.2.zip && \
-    unzip pg_repack-1.5.2.zip && \
-    cd pg_repack-1.5.2 && \
+    wget http://api.pgxn.org/dist/pg_repack/1.5.3/pg_repack-1.5.3.zip && \
+    unzip pg_repack-1.5.3.zip && \
+    cd pg_repack-1.5.3 && \
     make && \
     make install && \
     ln -s /usr/lib/postgresql/*/bin/pg_repack /usr/local/bin/pg_repack
